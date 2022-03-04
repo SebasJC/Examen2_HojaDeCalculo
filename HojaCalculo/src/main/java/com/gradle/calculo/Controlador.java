@@ -872,7 +872,20 @@ public class Controlador {
               }
 
               totalSumado.add(loQueSeSuma[loQueSeSuma.length]);
+
             }
+          }
+        }
+
+        Fraccion[] arregloFraccionesFinal = new Fraccion[totalSumado.size()];
+        arregloFraccionesFinal = totalSumado.toArray(arregloFraccionesFinal);
+
+        for (int filaArregloMatriz = 0; filaArregloMatriz < matrizFinal.length;
+             filaArregloMatriz++) {
+          for (int columnaArregloMatriz = 0;
+               columnaArregloMatriz < matrizFinal.length;
+               columnaArregloMatriz++) {
+            
           }
         }
 
