@@ -142,4 +142,12 @@ public class HojaDeCalculo
     System.out.println("");
   }
 
+  //ESTO ES PARTE DEL EXAMEN DENTRO DE ESTA CLASE.
+
+  public static void imprimirProductoMatriz() {
+
+  }
+
+  ////AQUÍ TERMINA LA PARTE DEL EXAMEN EN ESTA CLASE.
+
 } //java -jar HojaCalculo-1.0.jar < ../../tests/input006.txt
