@@ -846,30 +846,32 @@ public class Controlador {
         }
 
 
-        Fraccion[] totalSumado = new Fraccion[primeraMatriz.length
-            * segundaMatriz[0].length];
+        List<Fraccion> totalSumado = new ArrayList<Fraccion>();
+        for (int l = 0; l < segundaMatriz[0].length; l++) {
+          for (int i = 0; i < primeraMatriz.length; i++) {
+            for (int k = col1; k < primeraMatriz[0].length; k++) {
+              Fraccion[] loQueSeSuma = new Fraccion[primeraMatriz[0].length];
+              num1 = primeraMatriz[i][k].split("/")[0];
+              den1 = primeraMatriz[i][k].split("/")[1];
+              for (int j = 0; j < segundaMatriz.length; j++) {
+                Fraccion f1 = new Fraccion(num1, den1);
+                num2 = segundaMatriz[j][l].split("/")[0];
+                den2 = segundaMatriz[j][l].split("/")[1];
+                Fraccion f2 = new Fraccion(num2, den2);
+                f2 = f1.multiplicar(f2);
+                loQueSeSuma[j] = f2;
+              }
 
-        for (int i = 0; i < primeraMatriz.length; i++){
-          for (int k = col1; k < primeraMatriz[0].length; k++){
-            Fraccion[] loQueSeSuma = new Fraccion[primeraMatriz[0].length];
-            num1 = primeraMatriz[i][k].split("/")[0];
-            den1 = primeraMatriz[i][k].split("/")[1];
-            for (int j = 0; j < segundaMatriz.length; j++) {
-              Fraccion f1 = new Fraccion(num1, den1);
-              num2 = segundaMatriz[j][l].split("/")[0];
-              den2 = segundaMatriz[j][l].split("/")[1];
-              Fraccion f2 = new Fraccion(num2, den2);
-              f2 = f1.multiplicar(f2);
-              loQueSeSuma[j] = f2;
-            }
+              Fraccion f3;
+              Fraccion f4;
+              for (int sumas = 0; sumas < loQueSeSuma.length - 1; sumas++) {
+                f3 = loQueSeSuma[sumas];
+                f4 = loQueSeSuma[sumas + 1];
+                f4 = f3.sumar(f4);
+                loQueSeSuma[sumas + 1] = f4;
+              }
 
-            Fraccion f3;
-            Fraccion f4;
-            for (int sumas = 0; sumas < loQueSeSuma.length - 1; sumas++) {
-              f3 = loQueSeSuma[sumas];
-              f4 = loQueSeSuma[sumas + 1];
-              f4 = f3.sumar(f4);
-              loQueSeSuma[sumas + 1] = f4;
+              totalSumado.add(loQueSeSuma[loQueSeSuma.length]);
             }
           }
         }
