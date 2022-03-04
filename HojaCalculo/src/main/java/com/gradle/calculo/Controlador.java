@@ -863,6 +863,14 @@ public class Controlador {
               loQueSeSuma[j] = f2;
             }
 
+            Fraccion f3;
+            Fraccion f4;
+            for (int sumas = 0; sumas < loQueSeSuma.length - 1; sumas++) {
+              f3 = loQueSeSuma[sumas];
+              f4 = loQueSeSuma[sumas + 1];
+              f4 = f3.sumar(f4);
+              loQueSeSuma[sumas + 1] = f4;
+            }
           }
         }
 
