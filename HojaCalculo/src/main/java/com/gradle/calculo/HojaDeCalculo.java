@@ -144,8 +144,13 @@ public class HojaDeCalculo
 
   //ESTO ES PARTE DEL EXAMEN DENTRO DE ESTA CLASE.
 
-  public static void imprimirProductoMatriz() {
-
+  public static void imprimirProductoMatriz(String[][] matrizFinal) {
+    for (int filas = 0; filas < matrizFinal.length; filas++) {
+      for (int columnas = 0; columnas < matrizFinal[0].length; columnas++) {
+        System.out.printf("%s ", matrizFinal[filas][columnas]);
+      }
+      System.out.println("");
+    }
   }
 
   ////AQUÍ TERMINA LA PARTE DEL EXAMEN EN ESTA CLASE.

@@ -847,7 +847,7 @@ public class Controlador {
           for (int filas = 0; filas < (row4 - row3 + 1); filas++) {
             for (int columnas = col1; columnas < (col4 - col3 + 1); columnas++)
             {
-              primeraMatriz[filas][columnas] = datos[row3][col3];
+              segundaMatriz[filas][columnas] = datos[row3][col3];
               col3++;
             }
             row3++;
@@ -909,6 +909,8 @@ public class Controlador {
               i++;
             }
           }
+
+          HojaDeCalculo.imprimirProductoMatriz(matrizFinal);
         }
 
       }
