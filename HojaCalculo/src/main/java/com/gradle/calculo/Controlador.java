@@ -828,7 +828,13 @@ public class Controlador {
         String[][] primeraMatriz = new String[row2 - row1 + 1][col2 - col1 + 1];
         String[][] segundaMatriz = new String[row4 - row3 + 1][col4 - col3 + 1];
 
-        
+        for (int filas = 0; filas <= (row2 - row1 + 1); filas++) {
+          for (int columnas = col1; columnas <= (col2 - col1 + 1); columnas++) {
+            primeraMatriz[filas][columnas] = datos[row1][col1];
+            col1++;
+          }
+          row1++;
+        }
       }
 
       //AQUÍ TERMINA LA PARTE DEL EXAMEN EN ESTA CLASE.
