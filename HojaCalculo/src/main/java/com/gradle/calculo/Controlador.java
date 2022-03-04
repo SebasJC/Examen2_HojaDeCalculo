@@ -111,8 +111,12 @@ public class Controlador {
       //modificarlos o imprimirlos de acuerdo con el comando indicado.
       int row1;
       int row2;
+      int row3;
+      int row4;
       int col1;
       int col2;
+      int col3;
+      int col4;
 
       //If que indica la celda en donde estará el resultado del próximo comando.
       if (comando.contains(">=CEL")) {
@@ -793,6 +797,37 @@ public class Controlador {
         datos[celdaRow][celdaCol] = datos[fila2][columna2];
 
       }
+
+
+      //ESTO ES PARTE DEL EXAMEN DENTRO DE ESTA CLASE.
+      if (comando.contains(">=PRODUCTOMATRICIAL")) {
+        primerLetra = posiciones.charAt(1);
+        row1 = Character.getNumericValue(primerLetra);
+        row1 = row1 - 1;
+        primerLetra = posiciones.charAt(0);
+        col1 = primerLetra;
+        col1 = col1 - 65;
+        primerLetra = posiciones.charAt(4);
+        row2 = Character.getNumericValue(primerLetra);
+        row2 = row2 - 1;
+        primerLetra = posiciones.charAt(3);
+        col2 = primerLetra;
+        col2 = col2 - 65;
+        primerLetra = posiciones.charAt(7);
+        row3 = Character.getNumericValue(primerLetra);
+        row3 = row3 - 1;
+        primerLetra = posiciones.charAt(6);
+        col3 = primerLetra;
+        col3 = col3 - 65;
+        primerLetra = posiciones.charAt(10);
+        row4 = Character.getNumericValue(primerLetra);
+        row4 = row4 - 1;
+        primerLetra = posiciones.charAt(9);
+        col4 = primerLetra;
+        col4 = col4 - 65;
+      }
+
+      //AQUÍ TERMINA LA PARTE DEL EXAMEN EN ESTA CLASE.
 
 
 
