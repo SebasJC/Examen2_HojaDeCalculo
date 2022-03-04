@@ -1,0 +1,56 @@
+
+procedure Imprimir (rows, ints, [][] datos) do 
+    create size;
+    create max = 0;
+    for (int i = 0; i < rows; i++)
+        for (int k = 0; k < cols; k++)
+            size = datos[i][k].length();
+            if (i == 0 && k == 0)
+                max = size;
+            end
+            else if (max < size)
+                max = size;
+            end
+        end        
+    end
+
+    char [] letras = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+    create espacioNum = 3;
+    String lineaDivisora = new String(new char[max]).replace("\0", "-");
+
+    System.out.print("   |");
+    for (int i = 0; i < cols; i ++)
+      System.out.printf("%"+max+"C ", letras[i]);
+    end
+
+    System.out.println();
+    System.out.print("---+");
+    for (int i = 0; i < cols; i ++)
+      System.out.printf("%s ", lineaDivisora);
+    end
+
+    System.out.println();
+    for (int i = 0; i < rows; i ++)
+      System.out.printf("%"+espacioNum+"d|", i+1);
+      for (int k = 0; k < cols; k++)
+        System.out.printf("%"+max+"s ", datos[i][k]);
+      end
+      System.out.println();
+    end
+
+  end
+
+  procedure ImprimirConjunto (nombres, arregloConjuntos, datos) do
+    System.out.printf("%s -> ", nombres);
+    for (int i = 1; i < arregloConjuntos.length; i++)
+      char row = arregloConjuntos[i].charAt(1);
+      int row1 = Character.getNumericValue(row);
+      row1 = row1 - 1;
+      int col1 = arregloConjuntos[i].charAt(0);
+      col1 = col1 - 65;
+
+      System.out.printf("%s ", datos[row1][col1]);
+    end
+
+    System.out.println("");
+  

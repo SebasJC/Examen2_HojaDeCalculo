@@ -1,0 +1,20 @@
+4 4
+
+01/01, 03/01,  1/01, 00/01
+ 0/16,  0/01,   0/01, 0/01
+12/02, 16/01, 04/01, 00/01
+ 2/01,  01/2,  2/06, 00/01
+
+>=CEL(D1)
+>=SUMA(A1:C1)
+>=CEL(D2)
+>=MULT(A2:C2)
+>=CEL(D3)
+>=MAX(A3:C3)
+>=CEL(D4)
+>=PROMEDIO(A4:C4)
+>=CONJUNTO(conjunto1, D1, D2, D3, D4)
+>=CONJUNTO(conj2, A1, B1, C1)
+>=IMPRIMIR(conj2)
+>=IMPRIMIR(conjunto1)
+>=IMPRIMIR()
