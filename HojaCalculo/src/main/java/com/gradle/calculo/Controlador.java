@@ -825,6 +825,10 @@ public class Controlador {
         primerLetra = posiciones.charAt(9);
         col4 = primerLetra;
         col4 = col4 - 65;
+        String[][] primeraMatriz = new String[row2 - row1 + 1][col2 - col1 + 1];
+        String[][] segundaMatriz = new String[row4 - row3 + 1][col4 - col3 + 1];
+
+        
       }
 
       //AQUÍ TERMINA LA PARTE DEL EXAMEN EN ESTA CLASE.
