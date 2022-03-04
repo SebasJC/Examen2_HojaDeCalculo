@@ -825,70 +825,91 @@ public class Controlador {
         primerLetra = posiciones.charAt(9);
         col4 = primerLetra;
         col4 = col4 - 65;
-        String[][] primeraMatriz = new String[row2 - row1 + 1][col2 - col1 + 1];
-        String[][] segundaMatriz = new String[row4 - row3 + 1][col4 - col3 + 1];
-        String[][] matrizFinal = new String[row2 - row1 + 1][col4 - col3 + 1];
 
-        for (int filas = 0; filas < (row2 - row1 + 1); filas++) {
-          for (int columnas = col1; columnas < (col2 - col1 + 1); columnas++) {
-            primeraMatriz[filas][columnas] = datos[row1][col1];
-            col1++;
+        if ((col2 - col1 + 1) != (row4 - row3 + 1)) {
+          System.out.print("");
+        } else {
+          String[][] primeraMatriz = new String[row2 - row1 + 1][col2 - col1
+              + 1];
+          String[][] segundaMatriz = new String[row4 - row3 + 1][col4 - col3
+              + 1];
+          String[][] matrizFinal = new String[row2 - row1 + 1][col4 - col3 + 1];
+
+          for (int filas = 0; filas < (row2 - row1 + 1); filas++) {
+            for (int columnas = col1; columnas < (col2 - col1 + 1); columnas++)
+            {
+              primeraMatriz[filas][columnas] = datos[row1][col1];
+              col1++;
+            }
+            row1++;
           }
-          row1++;
-        }
 
-        for (int filas = 0; filas < (row4 - row3 + 1); filas++) {
-          for (int columnas = col1; columnas < (col4 - col3 + 1); columnas++) {
-            primeraMatriz[filas][columnas] = datos[row3][col3];
-            col3++;
+          for (int filas = 0; filas < (row4 - row3 + 1); filas++) {
+            for (int columnas = col1; columnas < (col4 - col3 + 1); columnas++)
+            {
+              primeraMatriz[filas][columnas] = datos[row3][col3];
+              col3++;
+            }
+            row3++;
           }
-          row3++;
-        }
 
 
-        List<Fraccion> totalSumado = new ArrayList<Fraccion>();
-        for (int l = 0; l < segundaMatriz[0].length; l++) {
-          for (int i = 0; i < primeraMatriz.length; i++) {
-            for (int k = col1; k < primeraMatriz[0].length; k++) {
-              Fraccion[] loQueSeSuma = new Fraccion[primeraMatriz[0].length];
-              num1 = primeraMatriz[i][k].split("/")[0];
-              den1 = primeraMatriz[i][k].split("/")[1];
-              for (int j = 0; j < segundaMatriz.length; j++) {
-                Fraccion f1 = new Fraccion(num1, den1);
-                num2 = segundaMatriz[j][l].split("/")[0];
-                den2 = segundaMatriz[j][l].split("/")[1];
-                Fraccion f2 = new Fraccion(num2, den2);
-                f2 = f1.multiplicar(f2);
-                loQueSeSuma[j] = f2;
+          List<Fraccion> totalSumado = new ArrayList<Fraccion>();
+          for (int l = 0; l < segundaMatriz[0].length; l++) {
+            for (int i = 0; i < primeraMatriz.length; i++) {
+              for (int k = col1; k < primeraMatriz[0].length; k++) {
+                Fraccion[] loQueSeSuma = new Fraccion[primeraMatriz[0].length];
+                num1 = primeraMatriz[i][k].split("/")[0];
+                den1 = primeraMatriz[i][k].split("/")[1];
+                for (int j = 0; j < segundaMatriz.length; j++) {
+                  Fraccion f1 = new Fraccion(num1, den1);
+                  num2 = segundaMatriz[j][l].split("/")[0];
+                  den2 = segundaMatriz[j][l].split("/")[1];
+                  Fraccion f2 = new Fraccion(num2, den2);
+                  f2 = f1.multiplicar(f2);
+                  loQueSeSuma[j] = f2;
+                }
+
+                Fraccion f3;
+                Fraccion f4;
+                for (int sumas = 0; sumas < loQueSeSuma.length - 1; sumas++) {
+                  f3 = loQueSeSuma[sumas];
+                  f4 = loQueSeSuma[sumas + 1];
+                  f4 = f3.sumar(f4);
+                  loQueSeSuma[sumas + 1] = f4;
+                }
+
+                totalSumado.add(loQueSeSuma[loQueSeSuma.length - 1]);
+
               }
+            }
+          }
 
-              Fraccion f3;
-              Fraccion f4;
-              for (int sumas = 0; sumas < loQueSeSuma.length - 1; sumas++) {
-                f3 = loQueSeSuma[sumas];
-                f4 = loQueSeSuma[sumas + 1];
-                f4 = f3.sumar(f4);
-                loQueSeSuma[sumas + 1] = f4;
-              }
+          Fraccion[] arregloFraccionesFinal = new Fraccion[totalSumado.size()];
+          arregloFraccionesFinal = totalSumado.toArray(arregloFraccionesFinal);
+          int[] filaCorrecta = new int[arregloFraccionesFinal.length];
+          int[] comlumnaCorrecta = new int[arregloFraccionesFinal.length];
 
-              totalSumado.add(loQueSeSuma[loQueSeSuma.length]);
+          for (int i = 0; i < arregloFraccionesFinal.length; i++) {
+            filaCorrecta[i] = i / matrizFinal.length;
+          }
 
+          for (int i = 0; i < arregloFraccionesFinal.length; i++) {
+            comlumnaCorrecta[i] = i % matrizFinal.length;
+          }
+
+          int i = 0;
+          for (int filaArregloMatriz = 0;
+               filaArregloMatriz < matrizFinal.length; filaArregloMatriz++) {
+            for (int columnaArregloMatriz = 0;
+                 columnaArregloMatriz < matrizFinal.length;
+                 columnaArregloMatriz++) {
+              matrizFinal[filaCorrecta[i]][comlumnaCorrecta[i]] =
+                  arregloFraccionesFinal[i].toString();
+              i++;
             }
           }
         }
-
-        Fraccion[] arregloFraccionesFinal = new Fraccion[totalSumado.size()];
-        arregloFraccionesFinal = totalSumado.toArray(arregloFraccionesFinal);
-
-        for (int filaArregloMatriz = 0; filaArregloMatriz < matrizFinal.length;
-             filaArregloMatriz++) {
-          for (int columnaArregloMatriz = 0;
-               columnaArregloMatriz < matrizFinal.length;
-               columnaArregloMatriz++) {
-            
-          }
-        }
-
 
       }
 
