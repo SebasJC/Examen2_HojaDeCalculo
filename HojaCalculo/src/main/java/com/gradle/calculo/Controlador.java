@@ -827,6 +827,7 @@ public class Controlador {
         col4 = col4 - 65;
         String[][] primeraMatriz = new String[row2 - row1 + 1][col2 - col1 + 1];
         String[][] segundaMatriz = new String[row4 - row3 + 1][col4 - col3 + 1];
+        String[][] matrizFinal = new String[row2 - row1 + 1][col4 - col3 + 1];
 
         for (int filas = 0; filas < (row2 - row1 + 1); filas++) {
           for (int columnas = col1; columnas < (col2 - col1 + 1); columnas++) {
@@ -843,6 +844,28 @@ public class Controlador {
           }
           row3++;
         }
+
+
+        for (int i = 0; i < primeraMatriz.length; i++){
+          for (int k = col1; k < primeraMatriz[0].length; k++){
+            num1 = primeraMatriz[i][k].split("/")[0];
+            den1 = primeraMatriz[i][k].split("/")[1];
+            for (int j = 0; j < segundaMatriz.length; j++) {
+              Fraccion f1 = new Fraccion(num1, den1);
+              num2 = segundaMatriz[j][l].split("/")[0];
+              den2 = segundaMatriz[j][l].split("/")[1];
+              Fraccion f2 = new Fraccion(num2, den2);
+            }
+            Fraccion f1 = new Fraccion(num1, den1);
+            if (i == row1 && k == col1){
+              f2 = f1;
+            }
+            else {
+              f2 = f1.multiplicar(f2);
+            }
+          }
+        }
+
       }
 
       //AQUÍ TERMINA LA PARTE DEL EXAMEN EN ESTA CLASE.
