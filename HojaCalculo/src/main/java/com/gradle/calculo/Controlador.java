@@ -846,6 +846,8 @@ public class Controlador {
         }
 
 
+        String[] loQueSeSuma = new String[primeraMatriz[0].length];
+
         for (int i = 0; i < primeraMatriz.length; i++){
           for (int k = col1; k < primeraMatriz[0].length; k++){
             num1 = primeraMatriz[i][k].split("/")[0];
@@ -855,6 +857,7 @@ public class Controlador {
               num2 = segundaMatriz[j][l].split("/")[0];
               den2 = segundaMatriz[j][l].split("/")[1];
               Fraccion f2 = new Fraccion(num2, den2);
+              f2 = f1.multiplicar(f2);
             }
             Fraccion f1 = new Fraccion(num1, den1);
             if (i == row1 && k == col1){
