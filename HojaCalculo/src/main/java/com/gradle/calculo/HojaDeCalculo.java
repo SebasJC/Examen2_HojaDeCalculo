@@ -144,7 +144,17 @@ public class HojaDeCalculo
 
   //ESTO ES PARTE DEL EXAMEN DENTRO DE ESTA CLASE.
 
+  /**
+   * Método que imprime la matriz final como resultado de una operación de
+   * fracciones.
+   *
+   * @param matrizFinal Recibe una matriz de tipo {@code String[][]} que
+   *                    contiene los resultados de la multiplicación de
+   *                    matrices.
+   */
   public static void imprimirProductoMatriz(String[][] matrizFinal) {
+
+    //Dos ciclos for que imprimen los resultados de multiplicación de matrices.
     for (int filas = 0; filas < matrizFinal.length; filas++) {
       for (int columnas = 0; columnas < matrizFinal[0].length; columnas++) {
         System.out.printf("%s ", matrizFinal[filas][columnas]);
@@ -155,4 +165,4 @@ public class HojaDeCalculo
 
   ////AQUÍ TERMINA LA PARTE DEL EXAMEN EN ESTA CLASE.
 
-} //java -jar HojaCalculo-1.0.jar < ../../tests/input006.txt
+}
