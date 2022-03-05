@@ -800,41 +800,111 @@ public class Controlador {
 
 
       //ESTO ES PARTE DEL EXAMEN DENTRO DE ESTA CLASE.
+
+      //If que indica que lo que tiene se ejecuta si el comando es ">=CONJUNTO".
       if (comando.contains(">=PRODUCTOMATRICIAL")) {
+        //Se obtiene el número como String de la celda en que va a empezar la
+        //primera matriz.
         primerLetra = posiciones.charAt(1);
+
+        //Se establece la variable "row1" con el valor de primeraLetra como
+        //int.
         row1 = Character.getNumericValue(primerLetra);
         row1 = row1 - 1;
+
+        //Se obtiene la letra de la celda en que va a empezar la primera matriz.
         primerLetra = posiciones.charAt(0);
+
+        //Se establece la columna de la celda en que va a empezar la primera
+        //matriz.
         col1 = primerLetra;
+
+        //Se obtiene el valor numérico de la letra y se le restan 65 para que
+        //quede establecido en la columna de la celda de la matriz que se
+        //modifica.
         col1 = col1 - 65;
+
+        //Se obtiene el número como String de la celda en que se va a
+        //terminar la primera matriz.
         primerLetra = posiciones.charAt(4);
+
+        //Se establece la variable "row2" con el valor de primeraLetra como
+        //int.
         row2 = Character.getNumericValue(primerLetra);
-        row2 = row2 - 1;
+        //Se obtiene la letra de la celda en que se va a terminar la primera
+        //matriz.
         primerLetra = posiciones.charAt(3);
+
+        //Se establece la columna de la celda en que se va a empezar con lo
+        //que hay en "primeraLetra".
         col2 = primerLetra;
+
+        //Se obtiene el valor numérico de la letra y se le restan 65 para que
+        //quede establecido en la columna de la celda de la matriz que se
+        //modifica.
         col2 = col2 - 65;
+
+
+        //Se obtiene el número como String de la celda en que va a empezar la
+        //segunda matriz.
         primerLetra = posiciones.charAt(7);
+
+        //Se establece la variable "row1" con el valor de primeraLetra como
+        //int.
         row3 = Character.getNumericValue(primerLetra);
         row3 = row3 - 1;
+
+        //Se obtiene la letra de la celda en que va a empezar la segunda matriz.
         primerLetra = posiciones.charAt(6);
+
+        //Se establece la columna de la celda en que va a empezar la segunda
+        //matriz.
         col3 = primerLetra;
+
+        //Se obtiene el valor numérico de la letra y se le restan 65 para que
+        //quede establecido en la columna de la celda de la matriz que se
+        //modifica.
         col3 = col3 - 65;
+
+        //Se obtiene el número como String de la celda en que se va a
+        //terminar la segunda matriz.
         primerLetra = posiciones.charAt(10);
+
+        //Se establece la variable "row4" con el valor de primeraLetra como
+        //int.
         row4 = Character.getNumericValue(primerLetra);
-        row4 = row4 - 1;
+        //Se obtiene la letra de la celda en que se va a terminar la primera
+        //matriz.
         primerLetra = posiciones.charAt(9);
+
+        //Se establece la columna de la celda en que se va a terminar con la
+        //segunda matriz
         col4 = primerLetra;
+
+        //Se obtiene el valor numérico de la letra y se le restan 65 para que
+        //quede establecido en la columna de la celda de la matriz que se
+        //modifica.
         col4 = col4 - 65;
 
+        //If que indica que si la primera fracción no tiene una cantidad de
+        //columnas igual a la cantidad de filas de la segunda, se imprime"",
+        //que indica que básicamente no se hizo nada, si no, se sigue con el
+        //else.
         if ((col2 - col1 + 1) != (row4 - row3 + 1)) {
           System.out.print("");
         } else {
+
+          //Primera matriz que se compara.
           String[][] primeraMatriz = new String[row2 - row1 + 1][col2 - col1
               + 1];
+
+          //Segunda matriz que se compara.
           String[][] segundaMatriz = new String[row4 - row3 + 1][col4 - col3
               + 1];
           String[][] matrizFinal = new String[row2 - row1 + 1][col4 - col3 + 1];
 
+          //Dos ciclos for que llenan la primera matriz con lo que hay en datos
+          //correspondientes a las posiciones adecuadas.
           for (int filas = 0; filas < (row2 - row1 + 1); filas++) {
             for (int columnas = col1; columnas < (col2 - col1 + 1); columnas++)
             {
@@ -844,6 +914,8 @@ public class Controlador {
             row1++;
           }
 
+          //Dos ciclos for que llenan la segunda matriz con lo que hay en datos
+          //correspondientes a las posiciones adecuadas.
           for (int filas = 0; filas < (row4 - row3 + 1); filas++) {
             for (int columnas = col1; columnas < (col4 - col3 + 1); columnas++)
             {
@@ -854,7 +926,17 @@ public class Controlador {
           }
 
 
+          //Lista que se usará para guardar los resultados de lo que se
+          //multiplique y se sume después.
           List<Fraccion> totalSumado = new ArrayList<Fraccion>();
+
+          //Cuatro ciclos for en donde se establece que todos los valores de
+          //cada fila de la primera matriz se multiplicarán por cada valor de
+          //cada columna de la segunda matriz por medio de instancias de la
+          //clase Fraccion, los resultados se almacenarán en el arreglo
+          //"loQueSeSuma", que se usará en otro ciclo for anidado para sumar los
+          //resultados obtenidos por medio de otras instancias de la clase
+          //Fraccion.
           for (int l = 0; l < segundaMatriz[0].length; l++) {
             for (int i = 0; i < primeraMatriz.length; i++) {
               for (int k = col1; k < primeraMatriz[0].length; k++) {
@@ -885,20 +967,33 @@ public class Controlador {
             }
           }
 
+          //Arreglo que recibe lo que hay en la lista "totalSumado" para pasarlo
+          //a "matrizFinal."
           Fraccion[] arregloFraccionesFinal = new Fraccion[totalSumado.size()];
           arregloFraccionesFinal = totalSumado.toArray(arregloFraccionesFinal);
+
+          //Variable usadas para encontrar el lugar correcto de la matriz para
+          //los elementos en "arregloFraccionesFinal".
           int[] filaCorrecta = new int[arregloFraccionesFinal.length];
           int[] comlumnaCorrecta = new int[arregloFraccionesFinal.length];
 
+          //Ciclo for que explora "arregloFraccionesFinal" para sacar la fila
+          //correcta en la que va el elemento i.
           for (int i = 0; i < arregloFraccionesFinal.length; i++) {
             filaCorrecta[i] = i / matrizFinal.length;
           }
 
+          //Ciclo for que explora "arregloFraccionesFinal" para sacar la columna
+          //correcta en la que va el elemento i.
           for (int i = 0; i < arregloFraccionesFinal.length; i++) {
             comlumnaCorrecta[i] = i % matrizFinal.length;
           }
 
+          //Contador
           int i = 0;
+
+          //Dos ciclos for que van llenando matrizFinal con los elementos de
+          //arregloFraccionesFinal.
           for (int filaArregloMatriz = 0;
                filaArregloMatriz < matrizFinal.length; filaArregloMatriz++) {
             for (int columnaArregloMatriz = 0;
@@ -910,6 +1005,7 @@ public class Controlador {
             }
           }
 
+          //Invocación del método imprimirProductoMatriz.
           HojaDeCalculo.imprimirProductoMatriz(matrizFinal);
         }
 
