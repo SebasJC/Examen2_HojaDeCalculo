@@ -123,13 +123,32 @@ Si tiene problemas al ejecutar el codigo puede ser que su JDK ocupe actualizar.
 
 ## Creditos
 
-Diego Valladares: diego.valladaresbermudez@ucr.ac.cr
-
 Sebastian Jimenez Camacho: sebastian.jimenezcamacho@ucr.ac.cr
 
 La Clase "Fraccion" fue creada por el profesor Alberto Rojas Salazar: alberto.rojassalazar@ucr.ac.cr
 
 El conocimiento de JAVA necesario para lograr este proyecto fue obtenido del curso CI-0112 (Programacion1 UCR).
+
+
+## Paradigma de Programacion Orientada a Objetos
+
+El paradigma de Programacion Orientada a Objetos consiste en una nueva manera de acomodar el codigo de manera que existen varias clases, una de ellas es la clase que lo
+maneja todo y las demas consisten en clases que representan a objetos relacionados con la funcion que realiza el programa. En este tipo de programacion hay ciertos
+conceptos, por ejemplo un objeto consiste en una variable que se usa para hacer o guardar determinados tipos de datos, una instancia es una variable que es de alguna
+clase especifica y que como tal, posee las cualidades de cosas que se atribuyen como de esa clase, los atributos corresponden justamente a esas caracteristicas que 
+tienen las clases y que tambien reciben sus instancias.
+
+El Paradigma de Programacion Orientada a Objetos tiene 4 principios basicos:  La encapsulacion que consiste en hacer que el usuario observe y conozca los metodos que 
+tiene que conocer para el funcionamiento del programa, mientras que los que no tiene que conocer se mantienen como privados, por ejemplo: en el procedimiento para 
+fabricar guitarras, el usuario solo necesita saber las formas en que se construira, mas no el procedimiento en si de ponerle los tornillos. Otro principio es la 
+abstraccion, que consiste en tomar ciertas caracteristicas importantes que puedan tener ciertos objetos o seres y utilizarlas para identificarlos y poder crear un 
+estandar para crear clases relacionadas a ellos y reconocerlos por esas cualidades, por ejemplo: podemos tener una clase Perro que tiene cualidades como nombre, edad, 
+color o raza, y nunca lo vamos a confundir con una clase automovil que tenga numero de serie, metal o periodo de fabricacion porque son 2 clases totalmente diferentes 
+con atributos totalmente diferentes. El siguiente princpio es el conocido como herencia, que consiste en que existe una clase en la que se basen otras clases, conocida
+como super clase, de ella otras clases que estan relacionadas obtienen sus atributos, por ejemplo: si tenemos un refugio de animales, en el hay varias especies de
+animales, por lo que una super clase seria "Animales" y podria dar a clases como "Perro" o "Gato" atributos, gracias a que estas los heredarian. El ultimo principio es
+el polimorfismo, consiste en la flexibilidad que puede tener un codigo para efectuar diferentes funciones dependiendo de los parametros que llegue a recibir, por 
+ejemplo: 
 
 
  
