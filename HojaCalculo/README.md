@@ -113,7 +113,9 @@ En windows seria:
 - Escribir dentro de la consola "cd ...\HojaCalculo\build\libs" (La ubicacion de la carpeta libs en su computadora)
 
 Luego escriba el comando "java -jar HojaCalculo-1.0.jar < ../../tests/input000.txt". Siendo "input000.txt" el archivo que se quiere correr, por lo que si desea
-cambiar de caso de prueba simplemente reemplace "input000" por el nombre del archivo deseado .
+cambiar de caso de prueba simplemente reemplace "input000" por el nombre del archivo deseado. Si se desea probar los casos de prueba brindados por el profesor para el
+examen, se debe hacer asi "java -jar HojaCalculo-1.0.jar < ../../HojaCalculo/tests/input004", aqui se estaria escogiendo la prueba "input004", si se desea escoger otra,
+se debe reemplazar por la que se busca.
 
 
 Tambien hay que asegurarse de que el archivo de texto tenga el formato valido (puede verse en la seccion de Analisis).
@@ -123,7 +125,7 @@ Si tiene problemas al ejecutar el codigo puede ser que su JDK ocupe actualizar.
 
 ## Creditos
 
-Sebastian Jimenez Camacho: sebastian.jimenezcamacho@ucr.ac.cr
+Sebastian Jimenez Camacho: sebastian.jimenezcamacho@ucr.ac.cr C13899
 
 La Clase "Fraccion" fue creada por el profesor Alberto Rojas Salazar: alberto.rojassalazar@ucr.ac.cr
 
@@ -134,9 +136,14 @@ El conocimiento de JAVA necesario para lograr este proyecto fue obtenido del cur
 
 El paradigma de Programacion Orientada a Objetos consiste en una nueva manera de acomodar el codigo de manera que existen varias clases, una de ellas es la clase que lo
 maneja todo y las demas consisten en clases que representan a objetos relacionados con la funcion que realiza el programa. En este tipo de programacion hay ciertos
-conceptos, por ejemplo un objeto consiste en una variable que se usa para hacer o guardar determinados tipos de datos, una instancia es una variable que es de alguna
-clase especifica y que como tal, posee las cualidades de cosas que se atribuyen como de esa clase, los atributos corresponden justamente a esas caracteristicas que 
-tienen las clases y que tambien reciben sus instancias.
+conceptos, por ejemplo un objeto consiste en una variable que se usa para hacer o guardar determinados tipos de datos, por ejemplo: si tenemos un 1 y la palabra "Hola", 
+sabemos que el 1 es un objeto de tipo numerico y "Hola" uno de tipo palabra; una instancia es una variable que es de alguna clase especifica y que como tal, posee las
+cualidades de cosas que se atribuyen como de esa clase por ejemplo: en una tienda de frutas tienen muchas manzanas pero quieren hacer un concurso con la que tenga el 
+color mas oscuro, deben tomar cada manzana por aparte e irla midiendo, cada una de esas manzanas representa una instancia de la clase "Manzana" con sus atributos 
+correspondientes aun cuando tienen diferencias dentro de ellos; los atributos corresponden justamente a esas caracteristicas que tienen las clases y que tambien reciben 
+sus instancias, por ejemplo: siguiendo con el ejemplo anterior, existen muchas manzanas, todas ellas tienen diferencias en sus caracteristicas, pero para medirlas con 
+los estandares de calidad de la tienda se ven ciertas caracteristicas que se van a revisar en todas las manzanas, como el color, tamano, fecha de caducidad y otros, 
+estos son atributos.
 
 El Paradigma de Programacion Orientada a Objetos tiene 4 principios basicos:  La encapsulacion que consiste en hacer que el usuario observe y conozca los metodos que 
 tiene que conocer para el funcionamiento del programa, mientras que los que no tiene que conocer se mantienen como privados, por ejemplo: en el procedimiento para 
@@ -148,7 +155,9 @@ con atributos totalmente diferentes. El siguiente princpio es el conocido como h
 como super clase, de ella otras clases que estan relacionadas obtienen sus atributos, por ejemplo: si tenemos un refugio de animales, en el hay varias especies de
 animales, por lo que una super clase seria "Animales" y podria dar a clases como "Perro" o "Gato" atributos, gracias a que estas los heredarian. El ultimo principio es
 el polimorfismo, consiste en la flexibilidad que puede tener un codigo para efectuar diferentes funciones dependiendo de los parametros que llegue a recibir, por 
-ejemplo: 
+ejemplo: si tenemos a un trabajador de una empresa que se encarga de pintar casas rojas y guitarras azules, podemos decir que el trabajador debe ver que color de pintura
+recibe para poder hacer su trabajo, es decir si la pintura que va a recibir es roja, va a buscar alguna asignacion para pintar una casa, pero si la pintura que recibe 
+es azul, buscara en cambio alguna oferta de trabajo para pintar una guitarra.
 
 
  
